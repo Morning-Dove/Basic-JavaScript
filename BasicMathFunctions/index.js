@@ -26,7 +26,7 @@ function square(x) {
 }
 
 
-function add_square(x, y) {
+function addSquare(x, y) {
     return add(square(x), square(y));
 }
 
@@ -49,8 +49,8 @@ function performOperation(operation) {
             result = square(x);
             document.getElementById("square").textContent = `You squared ${x} = ${result}`;
             break;
-        case 'add_square':
-            result = add_square(x, y);
+        case 'addSquare':
+            result = addSquare(x, y);
             document.getElementById("addSquare").textContent = `You added the squares of ${x} and ${y} = ${result}`;
             break;
     }
