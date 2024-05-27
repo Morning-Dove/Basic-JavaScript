@@ -6,17 +6,17 @@ This project demonstrates basic math functions using JavaScript. The project inc
 Add: Adds two numbers.
 Multiply: Multiplies two numbers.
 Square: Squares a number (uses the multiply function).
-Add Squares: Adds the squares of two numbers.
+Add Squares: Adds the squares of two numbers (uses the square and add functions).
 
 ##Getting Started
 Follow these instructions to set up and run the project on your local machine.
 
-##Installation
+###Installation
 Clone the Repository
 
 Open the index.html file in your web browser to view and interact with the project.
 
-##Usage
+###Usage
 Enter Numbers
 
 Input two numbers into the provided input fields.

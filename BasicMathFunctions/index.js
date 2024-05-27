@@ -1,65 +1,60 @@
-function add(x, y){
-    return parseInt(x) + parseInt(y);
+function getInputValues() {
+    const x = document.getElementById("fNumber").value;
+    const y = document.getElementById("sNumber").value;
+    
+    if (isNaN(x) || isNaN(y) || x.trim() === "" || y.trim() === "") {
+        alert("You have entered an invalid number!");
+        return [null, null];
+    }else{
+        return [parseInt(x), parseInt(y)];
+    };
 }
 
 
-function addition() {
-    let x = document.getElementById("fNumber").value;
-    let y = document.getElementById("sNumber").value;
-    let addition = parseInt(x) + parseInt(y);
-    let adding = document.getElementById("addition");
-
-    adding.textContent = `You added ${x} + ${y} = ${addition}`;
-    console.log(addition);
+function add(x, y) {
+    return x + y;
 }
 
 
-function multiply(x,y){
-    return parseInt(x) * parseInt(y);
-}
-
-function times(){
-    let x = document.getElementById("fNumber").value;
-    let y = document.getElementById("sNumber").value;
-    let multiplication = multiply(x,y);
-    let times = document.getElementById("multiplication");
-
-    times.textContent = `You multiplied ${x} * ${y} = ${multiplication}`;
-    console.log(multiplication);
+function multiply(x, y) {
+    return x * y;
 }
 
 
-function square(x){
-    return multiply(x,x)
-}
-
-
-function squareNums(){
-    let x = document.getElementById("fNumber").value;
-    let squares = multiply(x,x)
-    let sq = document.getElementById("square");
-    sq.textContent = `You squared ${x} = ${squares}`
-
+function square(x) {
     return multiply(x, x);
 }
 
-function add_square(x,y){
-    let num1 = square(x);
-    let num2 = square(y);
-    let addednums = add(num1, num2);
-    return addednums
-}
 
-function squared(){
-    let x = document.getElementById("fNumber").value;
-    let y = document.getElementById("sNumber").value;
-    let addedsquare = add_square(x,y)
-    
-    let squared = document.getElementById("addSquare");
-    squared.textContent = `You added the squares of ${x} and ${y} = ${addedsquare}`;
-    return addedsquare;
+function add_square(x, y) {
+    return add(square(x), square(y));
 }
 
 
+function performOperation(operation) {
+    const [x, y] = getInputValues();
+    if (x === null || y === null) return;
+
+    let result;
+    switch (operation) {
+        case 'add':
+            result = add(x, y);
+            document.getElementById("addition").textContent = `You added ${x} + ${y} = ${result}`;
+            break;
+        case 'multiply':
+            result = multiply(x, y);
+            document.getElementById("multiplication").textContent = `You multiplied ${x} * ${y} = ${result}`;
+            break;
+        case 'square':
+            result = square(x);
+            document.getElementById("square").textContent = `You squared ${x} = ${result}`;
+            break;
+        case 'add_square':
+            result = add_square(x, y);
+            document.getElementById("addSquare").textContent = `You added the squares of ${x} and ${y} = ${result}`;
+            break;
+    }
+    console.log(result);
+}
 
 
