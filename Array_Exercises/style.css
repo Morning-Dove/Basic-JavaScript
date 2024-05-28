@@ -4,7 +4,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body, section{
+section, header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -14,8 +14,15 @@ body, section{
 
 button{
     margin: 10px;
-    padding:8px;
+    padding: 10px;
     border-radius: 8px;
     border-style: none;
     background-color: rgb(13, 130, 130);
+}
+
+.button-line{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }

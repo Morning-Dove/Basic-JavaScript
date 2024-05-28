@@ -6,4 +6,6 @@
 
 
 * Array_Exercises
+View exercise results in the console.
     * Practice looping in JavaScript
+    * Exercises using .split() and .map()
